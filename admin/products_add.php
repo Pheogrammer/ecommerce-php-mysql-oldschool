@@ -20,24 +20,36 @@
 			$_SESSION['error'] = 'Product already exist';
 		}
 		else{
+			$filename = $_FILES['photo']['name'];
+		
+
 			if(!empty($filename)){
 				$ext = pathinfo($filename, PATHINFO_EXTENSION);
-				$new_filename = $slug.'.'.$ext;
-				move_uploaded_file($_FILES['photo']['tmp_name'], '../images/'.$new_filename);	
+				$new_filename = $slug.'.'.$ext;	
+				$target = 'images/'.basename($filename);
+
+				
+
+				if (move_uploaded_file($_FILES['photo']['tmp_name'], $target)) {
+					$_SESSION['error'] = "Image uploaded successfully";
+				}else{
+					$_SESSION['error'] = "Failed to upload image";
+				}
+
 			}
 			else{
 				$new_filename = '';
 			}
 
-			try{
-				$stmt = $conn->prepare("INSERT INTO products (category_id, name, description, slug, price, photo) VALUES (:category, :name, :description, :slug, :price, :photo)");
-				$stmt->execute(['category'=>$category, 'name'=>$name, 'description'=>$description, 'slug'=>$slug, 'price'=>$price, 'photo'=>$new_filename]);
-				$_SESSION['success'] = 'User added successfully';
+			// try{
+			// 	$stmt = $conn->prepare("INSERT INTO products (category_id, name, description, slug, price, photo) VALUES (:category, :name, :description, :slug, :price, :photo)");
+			// 	$stmt->execute(['category'=>$category, 'name'=>$name, 'description'=>$description, 'slug'=>$slug, 'price'=>$price, 'photo'=>$new_filename]);
+			// 	$_SESSION['success'] = 'User added successfully';
 
-			}
-			catch(PDOException $e){
-				$_SESSION['error'] = $e->getMessage();
-			}
+			// }
+			// catch(PDOException $e){
+			// 	$_SESSION['error'] = $e->getMessage();
+			// }
 		}
 
 		$pdo->close();

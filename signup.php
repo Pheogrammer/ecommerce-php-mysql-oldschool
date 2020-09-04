@@ -37,7 +37,7 @@
   	<div class="register-box-body">
     	<p class="login-box-msg">Register a new membership</p>
 
-    	<form action="register.php" method="POST">
+    	<form action="register.php" method="POST" enctype="multipart/form-data">
           <div class="form-group has-feedback">
             <input type="text" class="form-control" name="firstname" placeholder="Firstname" value="<?php echo (isset($_SESSION['firstname'])) ? $_SESSION['firstname'] : '' ?>" required>
             <span class="glyphicon glyphicon-user form-control-feedback"></span>

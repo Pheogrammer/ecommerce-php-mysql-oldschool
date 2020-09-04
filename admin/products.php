@@ -58,7 +58,7 @@
             <div class="box-header with-border">
               <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat" id="addproduct"><i class="fa fa-plus"></i> New</a>
               <div class="pull-right">
-                <form class="form-inline">
+                <form class="form-inline" enctype="multipart/form-data">
                   <div class="form-group">
                     <label>Category: </label>
                     <select class="form-control input-sm" id="select_category">

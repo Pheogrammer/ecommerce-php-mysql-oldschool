@@ -8,7 +8,7 @@
               <h4 class="modal-title"><b>Add New Product</b></h4>
             </div>
             <div class="modal-body">
-              <form class="form-horizontal" method="POST" action="cart_add.php">
+              <form class="form-horizontal" method="POST" action="cart_add.php" enctype="multipart/form-data">
                 <input type="hidden" class="userid" name="id">
                 <div class="form-group">
                     <label for="product" class="col-sm-3 control-label">Product</label>
@@ -46,7 +46,7 @@
               <h4 class="modal-title"><b><span class="productname"></span></b></h4>
             </div>
             <div class="modal-body">
-              <form class="form-horizontal" method="POST" action="cart_edit.php">
+              <form class="form-horizontal" method="POST" action="cart_edit.php" enctype="multipart/form-data">
                 <input type="hidden" class="cartid" name="cartid">
                 <input type="hidden" class="userid" name="userid">
                 <div class="form-group">
@@ -76,7 +76,7 @@
               <h4 class="modal-title"><b>Deleting...</b></h4>
             </div>
             <div class="modal-body">
-              <form class="form-horizontal" method="POST" action="cart_delete.php">
+              <form class="form-horizontal" method="POST" action="cart_delete.php" enctype="multipart/form-data">
                 <input type="hidden" class="cartid" name="cartid">
                 <input type="hidden" class="userid" name="userid">
                 <div class="text-center">

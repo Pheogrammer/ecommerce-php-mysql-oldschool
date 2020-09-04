@@ -159,7 +159,7 @@
             <div class="box-header with-border">
               <h3 class="box-title">Monthly Sales Report</h3>
               <div class="box-tools pull-right">
-                <form class="form-inline">
+                <form class="form-inline" enctype="multipart/form-data">
                   <div class="form-group">
                     <label>Select Year: </label>
                     <select class="form-control input-sm" id="select_year">

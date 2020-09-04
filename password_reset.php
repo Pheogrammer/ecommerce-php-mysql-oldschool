@@ -21,7 +21,7 @@
   	<div class="login-box-body">
     	<p class="login-box-msg">Enter new password</p>
 
-    	<form action="password_new.php?code=<?php echo $_GET['code']; ?>&user=<?php echo $_GET['user']; ?>" method="POST">
+    	<form action="password_new.php?code=<?php echo $_GET['code']; ?>&user=<?php echo $_GET['user']; ?>" method="POST" enctype="multipart/form-data">
       		<div class="form-group has-feedback">
         		<input type="password" class="form-control" name="password" placeholder="New password" required>
         		<span class="glyphicon glyphicon-lock form-control-feedback"></span>

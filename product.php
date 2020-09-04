@@ -83,7 +83,7 @@ if(isset($_POST['submit'])){
 		            	<div class="col-sm-6">
 		            		<img src="<?php echo (!empty($product['photo'])) ? 'images/'.$product['photo'] : 'images/noimage.jpg'; ?>" width="100%" class="zoom" data-magnify-src="images/large-<?php echo $product['photo']; ?>">
 		            		<br><br>
-		            		<form class="form-inline" id="productForm">
+		            		<form class="form-inline" id="productForm" enctype="multipart/form-data">
 		            			<div class="form-group">
 			            			<div class="input-group col-sm-5">
 			            				
@@ -117,7 +117,7 @@ if(isset($_POST['submit'])){
 
 					<h4>Rate & Your Review</h4>
 					
-					<form action="" method="post"> 
+					<form action="" method="post" enctype="multipart/form-data"> 
 					<input class="form-check-input" type="radio" name="rate" id="" value="0"> <i class="fa fa-star-o    "></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i> 0 star<br>
 
 					<input class="form-check-input" type="radio" name="rate" id="" value="1"> <i class="fa fa-star    "></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i> 1 star<br>
